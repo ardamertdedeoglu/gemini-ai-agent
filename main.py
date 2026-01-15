@@ -39,7 +39,6 @@ for _ in range(20):
     if response.usage_metadata is not None:
         if response.function_calls is not None:
             for function_call in response.function_calls:
-                print(f"Calling function {function_call.name}({function_call.args})")
                 function_call_result = call_function(function_call)
                 if function_call_result.parts is not None:
                     if len(function_call_result.parts) == 0:
